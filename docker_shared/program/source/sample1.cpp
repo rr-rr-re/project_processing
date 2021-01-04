@@ -1,15 +1,11 @@
+#include<pybind11/pybind11.h>
 
-/*
-#include <opencv2/opencv.hpp>
-
-int main() {
- cv::Mat img;
-
- img = cv::imread("/media/docker_shared/mono_develop/sampleimg.jpg");
-
- cv::imshow("title", img);
- cv::waitKey(0);
-
- return 0;
+//共有ライブラリにするので、main関数はありません。
+int add(int i, int j) {
+    return i + j;
 }
-*/
+
+PYBIND11_MODULE(cppmod, m) {
+    m.doc() = "pybind11 example plugin";
+    m.def("add", &add, "A function which adds tow numbers");
+}

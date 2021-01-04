@@ -9,7 +9,7 @@ import Cython
 
 
 # C++で作成した共有ファイルの.soをインポート
-import passing
+import face_detection
 
 input_path = '/media/docker_shared/mono_develop/img/getImg.jpg'
 output_path = '/media/docker_shared/mono_develop/img/kansei.jpg'
